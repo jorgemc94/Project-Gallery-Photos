@@ -1,11 +1,24 @@
 
 .HeaderComponent {
     background-image: url('../../assets/backgroundMobile.jpg');
+    background-repeat: no-repeat;
+}
+
+.HeaderComponent__text {
+    color:  whitesmoke;
+    padding: 1.5rem;
+    padding-top: 0rem;
 }
 
 @media only screen and (min-width: 1000px) {
     .HeaderComponent {
         background-image: url('../../assets/background.jpg');
+        background-repeat: no-repeat;
+    }
+
+    .HeaderComponent__text {
+        text-align: center;
+        font-size: 1.2rem;
     }
     
 }

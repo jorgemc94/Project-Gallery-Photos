@@ -1,0 +1,28 @@
+
+.InputComponent {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.InputComponent__content {
+    margin-bottom: 2rem;
+    width: 70%;
+    padding: 0.3rem;
+}
+
+.InputComponent__content__icon {
+    transform: translate(-120%, 5%);
+}
+
+@media only screen and (min-width: 1000px) {
+    .InputComponent__content {
+        margin-top: 1rem;
+        width: 40%;
+    }
+
+    .InputComponent__content__icon {
+        transform: translate(-120%, 25%);
+    }
+    
+}
