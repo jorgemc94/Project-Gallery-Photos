@@ -1,0 +1,11 @@
+
+.HeaderComponent {
+    background-image: url('../../assets/backgroundMobile.jpg');
+}
+
+@media only screen and (min-width: 1000px) {
+    .HeaderComponent {
+        background-image: url('../../assets/background.jpg');
+    }
+    
+}
