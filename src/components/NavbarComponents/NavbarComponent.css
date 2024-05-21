@@ -1,0 +1,35 @@
+
+.NavbarComponent {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.NavbarComponent__logo__text {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.NavbarComponent__links__list__item {
+    text-decoration: none;
+    font-style: oblique;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .NavbarComponent {
+        padding: 4rem;
+    }
+
+    .NavbarComponent__logo__text {
+        font-size: 1.8rem;
+    }
+
+    .NavbarComponent__links__list__item {
+        font-size: 1.5rem;
+    }
+}
