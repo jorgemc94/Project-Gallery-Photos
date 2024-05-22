@@ -2,7 +2,7 @@ import { HeaderComponent } from "../../components/HeaderComponents/HeaderCompone
 import { FooterComponent } from '../../components/FooterComponents/FooterComponent'
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from "react"
-import { GetSearchThunk } from "../../features/Search/SearchThunk"
+import { GetSearchRandomThunk } from "../../features/Search/SearchThunk"
 import { SearchComponent } from "../../components/SearchComponents/SearchComponent"
 import './SearchPage.css'
 
@@ -16,7 +16,7 @@ export const SearchPage = () => {
 
     useEffect(() => {
         if (searchStatus === 'idle') {
-            dispatch(GetSearchThunk())
+            dispatch(GetSearchRandomThunk())
         } else if (searchStatus === 'pending') {
             setLoading(true)
         } else if (searchStatus === 'fulfilled') {

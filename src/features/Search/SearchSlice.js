@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { GetSearchThunk } from "./SearchThunk";
+import { GetSearchRandomThunk, GetSearchPhotoThunk } from "./SearchThunk";
 
 export const SearchSlice = createSlice({
     name: 'search',
@@ -8,29 +8,39 @@ export const SearchSlice = createSlice({
         data: [],
         error: null
     },
-    reducers: {
-        addphoto: (state, action) => {
-            state.data.push(action.payload)
-        }
-    },
+
 
     extraReducers: (builder) => {
         builder
-        .addCase(GetSearchThunk.pending, (state, action) => {
+        .addCase(GetSearchRandomThunk.pending, (state, action) => {
             state.status = 'pending'
         })
 
-        .addCase(GetSearchThunk.fulfilled, (state, action) => {
+        .addCase(GetSearchRandomThunk.fulfilled, (state, action) => {
             state.status = 'fulfilled'
             state.data = action.payload
         })
 
-        .addCase(GetSearchThunk.rejected, (state, action) => {
+        .addCase(GetSearchRandomThunk.rejected, (state, action) => {
             state.status = 'rejected'
             state.error = ''
+        })
+
+        .addCase(GetSearchPhotoThunk.pending, state => {
+            state.status = 'pending'
+            state.error = false
+        })
+
+        .addCase(GetSearchPhotoThunk.fulfilled, (state, action) => {
+            state.status = 'fulfilled'
+            state.error = false
+            state.data = action.payload
+        })
+
+        .addCase(GetSearchPhotoThunk.rejected, state => {
+            state.status = 'rejected'
+            state.error = true
         })
     }
 
 })
-
-export const { addphoto } = SearchSlice.actions

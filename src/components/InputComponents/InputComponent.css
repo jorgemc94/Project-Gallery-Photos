@@ -2,27 +2,32 @@
 .InputComponent {
     display: flex;
     justify-content: center;
-    background-color: transparent;
 }
 
 .InputComponent__content {
     margin-bottom: 2rem;
     width: 70%;
     padding: 0.3rem;
+    background-color: transparent;
+    color: whitesmoke;
+    border-color: whitesmoke;
 }
 
 .InputComponent__content__icon {
     transform: translate(-120%, 5%);
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 1000px) {
     .InputComponent__content {
         margin-top: 1rem;
-        width: 40%;
+        width: 30%;
+        padding: 1rem;
     }
 
     .InputComponent__content__icon {
-        transform: translate(-120%, 25%);
+        transform: translate(-130%, 30%);
+        color: whitesmoke;
     }
     
 }
