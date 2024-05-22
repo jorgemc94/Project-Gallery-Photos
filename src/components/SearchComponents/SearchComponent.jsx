@@ -6,8 +6,10 @@ export const SearchComponent = (props) => {
 
     return(
         <>
-            <img className="SearchComponent" src={props.image}/>
-            {props.isSearchPage ? <IconsSearchComponent/> : <IconsFavoriteComponent/>}
+            <div className='SearchComponent'>
+                <img className="SearchComponent" src={props.image}/>
+                {props.isSearchPage ? <IconsSearchComponent/> : <IconsFavoriteComponent/>}
+            </div>
         </>
     )
 }

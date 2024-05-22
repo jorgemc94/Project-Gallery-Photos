@@ -29,8 +29,7 @@ export const GetSearchPhotoThunk = createAsyncThunk('search/getSearchPhoto', asy
             const dataSearch = await response.json()
             return dataSearch.results
         }
-        return (error)
-    
+        return false
     } catch (error) {
         console.log (error)
     }
