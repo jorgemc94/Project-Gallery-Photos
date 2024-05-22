@@ -14,7 +14,8 @@
 }
 
 .InputComponent__content__icon {
-    transform: translate(-120%, 5%);
+    transform: translate(-115%, 5%);
+    color: whitesmoke;
     cursor: pointer;
 }
 

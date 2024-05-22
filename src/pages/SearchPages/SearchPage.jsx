@@ -1,3 +1,4 @@
+
 import { HeaderComponent } from "../../components/HeaderComponents/HeaderComponent"
 import { FooterComponent } from '../../components/FooterComponents/FooterComponent'
 import { useDispatch, useSelector } from "react-redux"
@@ -29,11 +30,11 @@ export const SearchPage = () => {
 
     return (
         <>
-            <HeaderComponent isSearchPage={true} isInputSearchPage={true}/>
+            <HeaderComponent isSearchPage={true}/>
             {loading ? <p>Loading</p> : 
                <div className="SearchPage">
                     {photo.map((img) => (
-                        <SearchComponent
+                        <SearchComponent isSearchPage={true}
                             key={img.id} 
                             image={img.urls.small}
                         />

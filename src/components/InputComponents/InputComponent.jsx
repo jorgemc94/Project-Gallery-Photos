@@ -1,4 +1,3 @@
-
 import { useDispatch } from 'react-redux'
 import './InputComponent.css'
 import { GetSearchPhotoThunk, GetSearchRandomThunk } from '../../features/Search/SearchThunk'
@@ -25,7 +24,7 @@ export const InputComponent = () => {
     )
 }
 
-export const InputSearchComponet = () => {
+export const InputSearchComponent = () => {
 
     return (
         <div className='InputComponent'>

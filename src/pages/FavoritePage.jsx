@@ -5,7 +5,7 @@ import { FooterComponent } from '../components/FooterComponents/FooterComponent'
 export const FavoritePage = () => {
 
     return <>
-        <HeaderComponent isSearchPage={false} isInputSearchPage={false} />
+        <HeaderComponent />
         
         <FooterComponent/> 
     </>
