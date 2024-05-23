@@ -1,27 +1,27 @@
 
-.SearchComponent {
+.ImageComponent {
     position: relative;
     width: 100%;
     height: fit-content;
     padding-bottom: 1rem;
 }
 
-.SearchComponent__img {
+.ImageComponent__img {
     width: 100%;
     height: auto;
 }
 
-.SearchComponent__img:hover .IconsComponent {
+.ImageComponent__img:hover .IconsComponent {
     opacity: 1;
 }
 
 @media only screen and (min-width: 1000px) {
-    .SearchComponent {
+    .ImageComponent {
         padding-bottom: 1.5rem;
         display: inline-block;
     }
 
-    .SearchComponent__img {
+    .ImageComponent__img {
         display: block;
     }
 }

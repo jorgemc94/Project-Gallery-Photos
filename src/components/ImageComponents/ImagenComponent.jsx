@@ -1,13 +1,13 @@
 
 import { IconsFavoriteComponent, IconsSearchComponent } from '../IconsComponents/IconsComponent'
-import './SearchComponent.css'
+import './ImageComponent.css'
 
-export const SearchComponent = (props) => {
+export const ImageComponent = (props) => {
 
     return(
         <>
-            <div className='SearchComponent'>
-                <img className="SearchComponent__img" src={props.image}/>
+            <div className='ImageComponent'>
+                <img className="ImageComponent__img" src={props.image}/>
                 {props.isSearchPage ? <IconsSearchComponent image={props.image}/> : <IconsFavoriteComponent image={props.image}/>}
             </div>
         </>

@@ -8,7 +8,7 @@ export const IconsSearchComponent = (props) => {
         <>
             <div className="IconsComponent">
                 <span className="material-symbols-outlined IconsComponent__Icon"> heart_plus </span>
-                <span className="material-symbols-outlined IconsComponent__Icon" onClick={()=>saveAs(props.image)}> download </span>
+                <span className="material-symbols-outlined IconsComponent__Icon" onClick={()=>saveAs(props.image) }> download </span>
             </div>
         </>
     )

@@ -4,7 +4,7 @@ import { FooterComponent } from '../../components/FooterComponents/FooterCompone
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import { GetSearchRandomThunk } from "../../features/Search/SearchThunk"
-import { SearchComponent } from "../../components/SearchComponents/SearchComponent"
+import { ImageComponent } from "../../components/ImageComponents/ImagenComponent"
 import './SearchPage.css'
 
 export const SearchPage = () => {
@@ -35,7 +35,7 @@ export const SearchPage = () => {
                <div className="SearchPage">
                     
                     {photo.map((img) => (
-                        <SearchComponent isSearchPage={true}
+                        <ImageComponent isSearchPage={true}
                             key={img.id} 
                             image={img.urls.small}
                             description = {img.alt_description}
