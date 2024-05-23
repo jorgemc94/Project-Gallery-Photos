@@ -10,6 +10,7 @@ export const GetSearchRandomThunk = createAsyncThunk('search/getSearchRandom', a
         })
         if (response.ok) {
             const data = await response.json()
+            console.log(data)
             return data
         }
         return false
@@ -27,6 +28,7 @@ export const GetSearchPhotoThunk = createAsyncThunk('search/getSearchPhoto', asy
         })
         if (response.ok) {
             const dataSearch = await response.json()
+            console.log(dataSearch)
             return dataSearch.results
         }
         return false

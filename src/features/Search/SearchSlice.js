@@ -26,7 +26,7 @@ export const SearchSlice = createSlice({
             state.error = ''
         })
 
-        .addCase(GetSearchPhotoThunk.pending, state => {
+        .addCase(GetSearchPhotoThunk.pending, (state, action) => {
             state.status = 'pending'
             state.error = false
         })
@@ -37,7 +37,7 @@ export const SearchSlice = createSlice({
             state.data = action.payload
         })
 
-        .addCase(GetSearchPhotoThunk.rejected, state => {
+        .addCase(GetSearchPhotoThunk.rejected, (state, action) => {
             state.status = 'rejected'
             state.error = true
         })

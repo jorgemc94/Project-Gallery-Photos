@@ -33,10 +33,15 @@ export const SearchPage = () => {
             <HeaderComponent isSearchPage={true}/>
             {loading ? <p>Loading</p> : 
                <div className="SearchPage">
+                    
                     {photo.map((img) => (
                         <SearchComponent isSearchPage={true}
                             key={img.id} 
                             image={img.urls.small}
+                            description = {img.alt_description}
+                            height = {img.height}
+                            width = {img.width}
+                            likes = {img.likes}
                         />
                     ))}
                </div>
