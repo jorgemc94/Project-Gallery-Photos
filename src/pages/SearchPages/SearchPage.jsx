@@ -42,6 +42,7 @@ export const SearchPage = () => {
                             height = {img.height}
                             width = {img.width}
                             likes = {img.likes}
+                            date = {img.created_at}
                         />
                     ))}
                </div>
