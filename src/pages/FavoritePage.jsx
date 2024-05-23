@@ -11,16 +11,16 @@ export const FavoritePage = () => {
             <HeaderComponent />
             
             <div className="SearchPage">
-                {favorites.map((img) => (
+                {favorites.map((favorite) => (
                     <ImageComponent 
-                        key={img.id}
+                        key={favorite.id}
                         isSearchPage={false}
-                        image={img.image}
-                        description={img.alt_description}
-                        height={img.height}
-                        width={img.width}
-                        likes={img.likes}
-                        date={img.created_at}
+                        image={favorite.image}
+                        description={favorite.alt_description}
+                        height={favorite.height}
+                        width={favorite.width}
+                        likes={favorite.likes}
+                        date={favorite.created_at}
                     />
                 ))}
             </div>
@@ -28,4 +28,4 @@ export const FavoritePage = () => {
             <FooterComponent /> 
         </>
     );
-};
+}

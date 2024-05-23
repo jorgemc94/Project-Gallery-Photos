@@ -3,6 +3,7 @@ import { saveAs } from 'file-saver'
 import './IconsComponent.css'
 import { useDispatch } from 'react-redux'
 import { addFavorite } from '../../features/Favorite/FavoriteSlice'
+import { removeFavorite } from '../../features/Favorite/FavoriteSlice'
 
 export const IconsSearchComponent = (props) => {
 
@@ -36,10 +37,26 @@ export const IconsSearchComponent = (props) => {
 
 export const IconsFavoriteComponent = (props) => {
 
+    const dispatch = useDispatch()
+
+    const RemoveFavoriteHandler = (event) => {
+        event.preventDefault()
+        dispatch(removeFavorite({
+            key: props.key,
+            image: props.image,
+            description: props.alt_description,
+            height: props.height,
+            width: props.width,
+            likes: props.likes,
+            date: props.date
+        }));    
+        
+    }
+
     return (
         <>
             <div className="IconsComponent">
-                <span className="material-symbols-outlined IconsComponent__Icon"> heart_minus </span>
+                <span className="material-symbols-outlined IconsComponent__Icon" onClick={RemoveFavoriteHandler}> heart_minus </span>
                 <span className="material-symbols-outlined IconsComponent__Icon"> edit </span>
                 <span className="material-symbols-outlined IconsComponent__Icon" onClick={()=>saveAs(props.image) }> download </span>
             </div>
