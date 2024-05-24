@@ -5,27 +5,23 @@ import { ImageComponent } from '../components/ImageComponents/ImagenComponent';
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { OrderByComponent } from '../components/OrderByComponents/OrderByComponent';
-import { InputSearchComponent } from "../components/InputComponents/InputComponent"; // Importa el componente de búsqueda
+import { InputSearchComponent } from "../components/InputComponents/InputComponent";
 
-// Define el componente FavoritePage
+
 export const FavoritePage = () => {
-    // Obtiene las fotos favoritas del estado de Redux
     const favoritePhotos = useSelector((state) => state.favorite.data);
-    
-    // Estado para almacenar las fotos filtradas
     const [filteredPhotos, setFilteredPhotos] = useState([]);
-    
-    // Función para actualizar las fotos filtradas
     const updateFilteredPhotos = (filteredPhotos) => {
         setFilteredPhotos(filteredPhotos);
     };
+    
+  
 
     return (
         <>
             <HeaderComponent />
             <InputSearchComponent updateFilteredPhotos={updateFilteredPhotos} />
             <OrderByComponent/>
-            
             <div className="SearchPage">
                 {filteredPhotos.length > 0 ? (
                     filteredPhotos.map((favorite) => (
@@ -41,7 +37,7 @@ export const FavoritePage = () => {
                         /> 
                     ))
                 ) : (
-                    // Si no hay fotos filtradas, muestra todas las fotos favoritas
+                    
                     favoritePhotos.map((favorite) => (
                         <ImageComponent
                             isSearchPage={false}

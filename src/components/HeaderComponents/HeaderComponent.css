@@ -15,11 +15,13 @@
     .HeaderComponent {
         background-image: url('../../assets/background.jpg');
         background-repeat: no-repeat;
+        padding-bottom: 2rem;
     }
 
     .HeaderComponent__text {
         text-align: center;
         font-size: 1.2rem;
+        padding-bottom: 2rem;
     }
     
 }

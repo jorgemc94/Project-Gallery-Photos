@@ -1,14 +1,13 @@
 
 .ModalComponent {
-    display: none;
     background-color: white;
     left: 0;
     top: 0;
-    transform: translate(22%, -50%);
+    transform: translate(10%, -140%);
     padding: 2rem;
     border: 1px solid black;
     border-radius: 2rem;
-    width: 70%;
+    width: 80%;
 
 }
 
@@ -42,6 +41,7 @@
 .ModalComponent__list__item__definicion {
     font-style: normal;
     font-weight: bolder;
+    display: inline-block;
 }
 
 .ModalComponent__send {
@@ -56,8 +56,12 @@
 
 
 @media only screen and (min-width: 1000px) {
+
+    .ModalComponent {
+        width: 250%;
+    }
     .ModalComponent__Close {
-        transform: translateX(5000%);
+        transform: translateX(5450%);
     }
 
     .ModalComponent__Description {
@@ -72,7 +76,7 @@
     }
 
     .ModalComponent__send {
-        transform: translateX(950%);
+        transform: translateX(1100%);
         padding: 1rem 2.5rem;
     }
 }
