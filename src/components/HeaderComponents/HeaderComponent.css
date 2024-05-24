@@ -2,6 +2,7 @@
 .HeaderComponent {
     background-image: url('../../assets/backgroundMobile.jpg');
     background-repeat: no-repeat;
+    padding-bottom: 1rem;
 }
 
 .HeaderComponent__text {

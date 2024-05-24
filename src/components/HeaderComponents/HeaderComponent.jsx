@@ -14,7 +14,7 @@ export const HeaderComponent = (props) => {
             <header className='HeaderComponent'>
                 <NavbarComponent/>
                 {props.isSearchPage ?  <p className='HeaderComponent__text'>{searchContent}</p> : <p className='HeaderComponent__text'>{FavoriteContent}</p> }
-                {props.isSearchPage ?  <InputComponent/> : <InputSearchComponent/>}
+                {props.isSearchPage ?  <InputComponent/> : <br></br>}
             </header>
         </>
     )
