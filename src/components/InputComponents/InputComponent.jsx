@@ -17,6 +17,7 @@ export const InputComponent = () => {
         }
     }
 
+
     return (
         <div className='InputComponent'>
             <input type = 'text' placeholder = 'search photos in the gallery' className="InputComponent__content" onKeyDown={submitSearchHandler}/>
@@ -27,10 +28,11 @@ export const InputComponent = () => {
 
 export const InputSearchComponent = () => {
 
+    
 
     return (
         <div className='InputComponent'>
-            <input type = 'text' placeholder = 'search photos by description' className="InputComponent__content" name='search'/>
+            <input type = 'text' placeholder = 'search photos by description' className="InputComponent__content" name='search' />
             <span className='material-symbols-outlined InputComponent__content__icon'>search</span>
         </div>
         

@@ -1,25 +1,29 @@
 
 import { saveAs } from 'file-saver'
 import './IconsComponent.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addFavorite } from '../../features/Favorite/FavoriteSlice'
 import { removeFavorite } from '../../features/Favorite/FavoriteSlice'
+
 
 export const IconsSearchComponent = (props) => {
 
     const dispatch = useDispatch()
+    const Favorite = useSelector ((state) => state.favorite.data)
 
     const AddFavoriteHandler = (event) => {
         event.preventDefault()
-        dispatch(addFavorite({
-            key: props.key,
+       console.log( dispatch(addFavorite({
+            id: props.id,
             image: props.image,
-            description: props.alt_description,
+            description: props.description,
             height: props.height,
             width: props.width,
             likes: props.likes,
-            date: props.date
-        }));    
+            date: props.date,
+            
+            
+        })));    
         
     }
     
@@ -38,17 +42,13 @@ export const IconsSearchComponent = (props) => {
 export const IconsFavoriteComponent = (props) => {
 
     const dispatch = useDispatch()
-
+    const Favorite = useSelector ((state) => state.favorite.data)
+   
     const RemoveFavoriteHandler = (event) => {
         event.preventDefault()
         dispatch(removeFavorite({
-            key: props.key,
-            image: props.image,
-            description: props.alt_description,
-            height: props.height,
-            width: props.width,
-            likes: props.likes,
-            date: props.date
+            id: props.id
+            
         }));    
         
     }

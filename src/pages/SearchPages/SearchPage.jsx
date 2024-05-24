@@ -34,19 +34,21 @@ export const SearchPage = () => {
             {loading ? <p>Loading</p> : 
                <div className="SearchPage">
                     
-                    {photo.map((img) => (
+                    {photo.map((img, index) => (
                         <ImageComponent isSearchPage={true}
-                            key={img.id} 
-                            image={img.urls.small}
+                            date = {img.created_at}
                             description = {img.alt_description}
                             height = {img.height}
-                            width = {img.width}
+                            id={img.id} 
+                            image={img.urls.small}
                             likes = {img.likes}
-                            date = {img.created_at}
+                            width = {img.width}
+                            key = {index}                  
                         />
                     ))}
                </div>
             }
+            
             <FooterComponent/> 
         </>
     )
