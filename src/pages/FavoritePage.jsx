@@ -4,27 +4,31 @@ import { FooterComponent } from '../components/FooterComponents/FooterComponent'
 import { ImageComponent } from '../components/ImageComponents/ImagenComponent';
 import { useSelector } from "react-redux";
 import { useState } from "react";
-import { OrderByComponent } from '../components/OrderByComponents/OrderByComponent';
 import { InputSearchComponent } from "../components/InputComponents/InputComponent";
-
+import './FavoritePage.css'
 
 export const FavoritePage = () => {
     const favoritePhotos = useSelector((state) => state.favorite.data);
-    const [filteredPhotos, setFilteredPhotos] = useState([]);
-    const updateFilteredPhotos = (filteredPhotos) => {
-        setFilteredPhotos(filteredPhotos);
-    };
+    const [filteredPhotos, setFilteredPhotos] = useState(favoritePhotos);
     
-  
+    const FilteredOnchange = (event) => {
+        const value = event.target.value
+        const SortPhoto = [...filteredPhotos].sort((a,b) => a[value] - b[value])
+        setFilteredPhotos(SortPhoto)
+    }
 
     return (
         <>
             <HeaderComponent />
-            <InputSearchComponent updateFilteredPhotos={updateFilteredPhotos} />
-            <OrderByComponent/>
+            <InputSearchComponent updateFilteredPhotos={setFilteredPhotos} />
+            <select onChange={FilteredOnchange} className="OrderByComponent__select">
+                <option value={'width'} >Width</option>
+                <option value={'height'} >Height</option>
+                <option value={'likes'} >Likes</option>
+                <option value={'date'} >Date</option>
+            </select>
             <div className="SearchPage">
-                {filteredPhotos.length > 0 ? (
-                    filteredPhotos.map((favorite) => (
+                {filteredPhotos.map((favorite) => (
                         <ImageComponent
                             isSearchPage={false}
                             date={favorite.date} 
@@ -36,21 +40,7 @@ export const FavoritePage = () => {
                             width={favorite.width}
                         /> 
                     ))
-                ) : (
-                    
-                    favoritePhotos.map((favorite) => (
-                        <ImageComponent
-                            isSearchPage={false}
-                            date={favorite.date} 
-                            description={favorite.description} 
-                            height={favorite.height}
-                            key={favorite.id}
-                            image={favorite.image}
-                            likes={favorite.likes}
-                            width={favorite.width}
-                        /> 
-                    ))
-                )}
+                }
             </div>
             <FooterComponent /> 
         </>

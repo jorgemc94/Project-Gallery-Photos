@@ -4,6 +4,7 @@ import { InputSearchComponent } from '../InputComponents/InputComponent'
 import { NavbarComponent } from '../NavbarComponents/NavbarComponent'
 import './HeaderComponent.css'
 
+
 export const HeaderComponent = (props) => {
 
     const searchContent = 'Increíble Galería de Imágenes Para Descargar. Contamos con más de 1 millón de imágenes gracias a Unplash'
@@ -14,7 +15,7 @@ export const HeaderComponent = (props) => {
             <header className='HeaderComponent'>
                 <NavbarComponent/>
                 {props.isSearchPage ?  <p className='HeaderComponent__text'>{searchContent}</p> : <p className='HeaderComponent__text'>{FavoriteContent}</p> }
-                {props.isSearchPage ?  <InputComponent/> : <br></br>}
+                {props.isSearchPage ?  <InputComponent/> : <p></p>}
             </header>
         </>
     )

@@ -40,16 +40,16 @@ export const InputSearchComponent = ({ updateFilteredPhotos }) => {
     };
 
     return (
-        <div className='InputComponent'>
-            <input 
+        <div className='InputComponent '>
+            <input
                 type='text' 
                 placeholder='search photos by description' 
-                className="InputComponent__content" 
+                className="InputComponent__content InputComponent__content__favorite" 
                 name='search' 
                 value={searchText}
                 onChange={FilterFavoriteHandler}
             />
-            <span className='material-symbols-outlined InputComponent__content__icon'>search</span>
+            <span className='material-symbols-outlined InputComponent__content__icon InputComponent__content__icon__favorite'>search</span>
         </div>
     );
 };

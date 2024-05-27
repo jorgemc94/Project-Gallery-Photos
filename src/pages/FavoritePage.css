@@ -1,5 +1,16 @@
 
+.OrderByComponent__select {
+    margin-left: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+}
 
-.input {
-    transform: translateY(-65%);
+
+@media only screen and (min-width: 1000px) {
+    .OrderByComponent__select {
+        width: 8%;
+        margin-left: 2rem;
+        padding: 1rem;
+    }
+    
 }

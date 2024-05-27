@@ -1,9 +1,9 @@
 
 .ModalComponent {
     background-color: white;
-    left: 0;
-    top: 0;
-    transform: translate(10%, -140%);
+    left: 100;
+    top: 100;
+    transform: translate(10%, -80%);
     padding: 2rem;
     border: 1px solid black;
     border-radius: 2rem;
@@ -57,12 +57,15 @@
 
 @media only screen and (min-width: 1000px) {
 
-    .ModalComponent {
-        width: 250%;
-    }
-    .ModalComponent__Close {
-        transform: translateX(5450%);
-    }
+   .ModalComponent {
+    width: 100%;
+    padding: 3rem;
+   }
+
+   .ModalComponent__Close {
+    transform: translateX(1800%);
+    cursor: pointer;
+}
 
     .ModalComponent__Description {
         height: 10rem;
@@ -76,7 +79,7 @@
     }
 
     .ModalComponent__send {
-        transform: translateX(1100%);
+        
         padding: 1rem 2.5rem;
     }
 }
