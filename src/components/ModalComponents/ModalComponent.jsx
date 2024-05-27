@@ -6,7 +6,7 @@ export const ModalComponent = ({isOpen, onClose, description, width, height, lik
 
     return(
         <>
-            <form className="ModalComponent" open={isOpen} onSubmit={onSubmit}>
+            <div className='ModalComponent'>
                 <span className="material-symbols-outlined ModalComponent__Close" onClick={onClose}> cancel </span>
                 <h2 className="ModalComponent__Title">Desciption</h2>
                 <textarea className="ModalComponent__Description" placeholder={description}></textarea>
@@ -16,8 +16,10 @@ export const ModalComponent = ({isOpen, onClose, description, width, height, lik
                     <li className="ModalComponent__list__item"><p className="ModalComponent__list__item__definicion">Likes: </p>{likes}</li>
                     <li className="ModalComponent__list__item"><p className="ModalComponent__list__item__definicion">Date: </p>{date}</li>
                 </ul>
-                <button type='submit' className='ModalComponent__send'>Send</button>
-            </form>
+                <form open={isOpen} className='ModalComponent__form' onSubmit={onSubmit}>
+                    <button type='submit' className='ModalComponent__form__send'>Send</button>
+                </form>
+            </div>
         </>
     )
 }

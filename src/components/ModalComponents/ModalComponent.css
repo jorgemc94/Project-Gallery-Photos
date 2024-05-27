@@ -1,86 +1,96 @@
 
 .ModalComponent {
-    background-color: white;
+    position: fixed;
+    height: auto;
+    width:  90%;
+    top: 25%;
+    left: 0;
     right: 0;
-    top: 0;
-    transform: translate(50%, -50%);
-    padding: 2rem;
-    border: 1px solid black;
-    border-radius: 2rem;
-    width: 80%;
+    margin: auto;
+    background-color: white;
     z-index: 1;
+    border: 0.1em solid black;
+    padding: 1em;
 }
 
 .ModalComponent__Close {
-    transform: translateX(750%);
+    display: flex;
+    justify-content: flex-end;
     cursor: pointer;
 }
 
 .ModalComponent__Title {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 0.5em 0em;
     font-style: oblique;
 }
 
 .ModalComponent__Description {
-    height: 5rem;
     width: 100%;
-    border: 1px solid black
+    height: 20%;
+    padding: 0.2em;
 }
 
 .ModalComponent__list {
-    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em;
     list-style: none;
 }
 
-.ModalComponent__list__item {
-    padding-bottom: 1rem;
+.ModalComponent__list__item__definicion {
+    font-weight: bolder;
+    display: inline-block;
+    padding: 0.5em;
     font-style: oblique;
 }
 
-.ModalComponent__list__item__definicion {
-    font-style: normal;
-    font-weight: bolder;
-    display: inline-block;
+.ModalComponent__form {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em 0em;
 }
 
-.ModalComponent__send {
-    padding: 0.5rem 1.5rem;
-    border: none;
-    background-color: green;
-    color: whitesmoke;
-    border-radius: 1rem;
+.ModalComponent__form__send {
+    padding: 0.5em 1em;
+    border: 0.1em solid black;
+    border-radius: 0.5em;
     cursor: pointer;
-    transform: translateX(150%);
 }
 
+.ModalComponent__form__send:hover {
+    background-color: green;
+    border: none;
+    color: whitesmoke;
+}
 
 @media only screen and (min-width: 1000px) {
 
    .ModalComponent {
-    transform: translate(0%,-50%);
-    width: 50rem;
-    padding: 3rem;
+    width: 60%;
+    padding: 2em;
    }
 
-   .ModalComponent__Close {
-    transform: translateX(1800%);
-    cursor: pointer;
-}
+   .ModalComponent__Title {
+    font-size: 2em;
+   }
 
-    .ModalComponent__Description {
-        height: 10rem;
-    }
+   .ModalComponent__Description {
+    font-size: 1.3em;
+    height: 7em;
+   }
 
-    .ModalComponent__list {
-        display: flex;
-        justify-content: space-around;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
+   .ModalComponent__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 2em 0em;
+   }
 
-    .ModalComponent__send {
-        
-        padding: 1rem 2.5rem;
-    }
+   .ModalComponent__list__item__definicion {
+    font-size: 1.3em;
+   }
+
+   .ModalComponent__form__send {
+    padding: 1em 2em;
+   }
 }
