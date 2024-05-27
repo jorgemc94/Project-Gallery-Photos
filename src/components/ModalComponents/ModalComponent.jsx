@@ -3,13 +3,9 @@ import './ModalComponent.css'
 
 export const ModalComponent = ({isOpen, onClose, description, width, height, likes, date}) => {
 
-    if (!isOpen) {
-        return null;
-    }
-
     return(
         <>
-            <div className="ModalComponent" open={isOpen}>
+            <dialog className="ModalComponent" open={isOpen}>
                 <span className="material-symbols-outlined ModalComponent__Close" onClick={onClose}> cancel </span>
                 <h2 className="ModalComponent__Title">Desciption</h2>
                 <textarea className="ModalComponent__Description" placeholder={description}></textarea>
@@ -20,7 +16,7 @@ export const ModalComponent = ({isOpen, onClose, description, width, height, lik
                     <li className="ModalComponent__list__item"><p className="ModalComponent__list__item__definicion">Date: </p>{date}</li>
                 </ul>
                 <button type='submit' onClick={onClose} className='ModalComponent__send'>Send</button>
-            </div>
+            </dialog>
         </>
     )
 }

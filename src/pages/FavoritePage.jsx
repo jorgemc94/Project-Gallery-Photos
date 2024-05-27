@@ -3,7 +3,7 @@ import { HeaderComponent } from "../components/HeaderComponents/HeaderComponent"
 import { FooterComponent } from '../components/FooterComponents/FooterComponent';
 import { ImageComponent } from '../components/ImageComponents/ImagenComponent';
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { InputSearchComponent } from "../components/InputComponents/InputComponent";
 import './FavoritePage.css'
 
@@ -17,6 +17,10 @@ export const FavoritePage = () => {
         setFilteredPhotos(SortPhoto)
     }
 
+    useEffect (() => {
+        setFilteredPhotos(favoritePhotos)
+    }, [favoritePhotos])
+
     return (
         <>
             <HeaderComponent />
@@ -28,19 +32,19 @@ export const FavoritePage = () => {
                 <option value={'date'} >Date</option>
             </select>
             <div className="SearchPage">
-                {filteredPhotos.map((favorite) => (
+                {favoritePhotos.length ? filteredPhotos.map((favorite) => (
                         <ImageComponent
                             isSearchPage={false}
                             date={favorite.date} 
                             description={favorite.description} 
                             height={favorite.height}
-                            key={favorite.id}
+                            id={favorite.id}
                             image={favorite.image}
                             likes={favorite.likes}
                             width={favorite.width}
                         /> 
                     ))
-                }
+                : <p>No favorite Photos</p>} 
             </div>
             <FooterComponent /> 
         </>

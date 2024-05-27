@@ -44,15 +44,15 @@ export const IconsSearchComponent = (props) => {
 export const IconsFavoriteComponent = (props) => {
 
     const dispatch = useDispatch()
-    const Favorite = useSelector ((state) => state.favorite.data)
+    const Favorite = useSelector ((state) => state.search.data)
     const [isOpenModal, setIsOpenModal] = useState(false)
    
     const RemoveFavoriteHandler = (event) => {
         event.preventDefault()
-        dispatch(removeFavorite({
-            id: props.id
+        dispatch(removeFavorite(
+            props.id
             
-        }));    
+        ));    
         
     }
 
@@ -73,7 +73,7 @@ export const IconsFavoriteComponent = (props) => {
                 <span className="material-symbols-outlined IconsComponent__Icon" onClick={()=>saveAs(props.image) }> download </span>
                 
             </div>
-            {isOpenModal && (<ModalComponent isOpen={isOpenModal} onClose={closeModal} description={props.description} width={props.width} height={props.height} likes={props.likes} date={props.date}/>)}
+            {isOpenModal ? (<ModalComponent isOpen={isOpenModal} onClose={closeModal} description={props.description} width={props.width} height={props.height} likes={props.likes} date={props.date}/>):<p></p>}
         </>
     )
 }

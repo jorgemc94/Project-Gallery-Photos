@@ -1,14 +1,14 @@
 
 .ModalComponent {
     background-color: white;
-    left: 100;
-    top: 100;
-    transform: translate(10%, -80%);
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
     padding: 2rem;
     border: 1px solid black;
     border-radius: 2rem;
     width: 80%;
-
+    z-index: 1;
 }
 
 .ModalComponent__Close {
@@ -58,7 +58,8 @@
 @media only screen and (min-width: 1000px) {
 
    .ModalComponent {
-    width: 100%;
+    transform: translate(0%,-50%);
+    width: 50rem;
     padding: 3rem;
    }
 
