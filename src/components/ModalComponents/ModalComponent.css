@@ -44,17 +44,12 @@
     font-style: oblique;
 }
 
-.ModalComponent__form {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1em 0em;
-}
-
 .ModalComponent__form__send {
     padding: 0.5em 1em;
     border: 0.1em solid black;
     border-radius: 0.5em;
     cursor: pointer;
+    transform: translateX(400%);
 }
 
 .ModalComponent__form__send:hover {
@@ -92,5 +87,6 @@
 
    .ModalComponent__form__send {
     padding: 1em 2em;
+    transform: translateX(1140%);
    }
 }
