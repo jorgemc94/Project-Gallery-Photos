@@ -1,5 +1,4 @@
 
-import { Alert } from '@mui/material'
 import './ModalComponent.css'
 
 export const ModalComponent = ({isOpen, onClose, description, width, height, likes, date, onSubmit}) => {
