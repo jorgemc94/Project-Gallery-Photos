@@ -18,8 +18,20 @@ export const FavoriteSlice = createSlice({
         removeFavorite: (state, action) => {
             state.data = state.data.filter(image => image.id !== action.payload)
             localStorage.setItem('favorites', JSON.stringify(state.data));
+        },
+
+        editDescription: (state, action) => {
+            state.data = state.data.map(image => {
+                if (image.id === action.payload.id) {
+                    image.description = action.payload.description
+                    return image
+                }
+                
+            })
+            localStorage.setItem('favorites', JSON.stringify(state.data));
+            return state
         }
     }
 })
 
-export const { addFavorite, removeFavorite } = FavoriteSlice.actions;
+export const { addFavorite, removeFavorite, editDescription } = FavoriteSlice.actions;

@@ -2,7 +2,7 @@
 import { saveAs } from 'file-saver'
 import './IconsComponent.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { addFavorite } from '../../features/Favorite/FavoriteSlice'
+import { addFavorite, editDescription } from '../../features/Favorite/FavoriteSlice'
 import { removeFavorite } from '../../features/Favorite/FavoriteSlice'
 import { useState } from 'react'
 import { ModalComponent } from '../ModalComponents/ModalComponent'
@@ -28,6 +28,7 @@ export const IconsSearchComponent = (props) => {
         })));    
         
     }
+
     
 
     return (
@@ -64,7 +65,14 @@ export const IconsFavoriteComponent = (props) => {
         setIsOpenModal(false)
     }
 
-
+    const ModifyDescriptionHandler = (event) => {
+        event.preventDefault()
+        const value = event.target.elements[0].value
+        dispatch(editDescription(
+            {id: props.id, description: value}
+        ))
+        setIsOpenModal(false)
+    }
     return (
         <>
             <div className="IconsComponent">
@@ -73,7 +81,7 @@ export const IconsFavoriteComponent = (props) => {
                 <span className="material-symbols-outlined IconsComponent__Icon" onClick={()=>saveAs(props.image) }> download </span>
                 
             </div>
-            {isOpenModal ? (<ModalComponent isOpen={isOpenModal} onClose={closeModal} description={props.description} width={props.width} height={props.height} likes={props.likes} date={props.date}/>):<p></p>}
+            {isOpenModal ? (<ModalComponent isOpen={isOpenModal} onClose={closeModal} description={props.description} width={props.width} height={props.height} likes={props.likes} date={props.date} onSubmit={ModifyDescriptionHandler}/>):<p></p>}
         </>
     )
 }
