@@ -1,46 +1,11 @@
 
-import { saveAs } from 'file-saver'
-import './IconsComponent.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { addFavorite, editDescription } from '../../features/Favorite/FavoriteSlice'
-import { removeFavorite } from '../../features/Favorite/FavoriteSlice'
-import { useState } from 'react'
-import { ModalComponent } from '../ModalComponents/ModalComponent'
-
-
-export const IconsSearchComponent = (props) => {
-
-    const dispatch = useDispatch()
-    
-
-    const AddFavoriteHandler = (event) => {
-        event.preventDefault()
-       console.log( dispatch(addFavorite({
-            id: props.id,
-            image: props.image,
-            description: props.description,
-            height: props.height,
-            width: props.width,
-            likes: props.likes,
-            date: props.date,
-            
-            
-        })));    
-        
-    }
-
-    
-
-    return (
-        <>
-            <div className="IconsComponent">
-                <span className="material-symbols-outlined IconsComponent__Icon" onClick={AddFavoriteHandler}> heart_plus </span>
-                <span className="material-symbols-outlined IconsComponent__Icon" onClick={()=>saveAs(props.image) }> download </span>
-            </div>
-        </>
-    )
-}
-
+import { useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
+import { useState } from "react"
+import { removeFavorite } from "../../../features/Favorite/FavoriteSlice"
+import { editDescription } from "../../../features/Favorite/FavoriteSlice"
+import { ModalComponent } from "../../ModalComponents/ModalComponent"
+import '../IconsComponent.css'
 
 export const IconsFavoriteComponent = (props) => {
 
@@ -85,8 +50,3 @@ export const IconsFavoriteComponent = (props) => {
         </>
     )
 }
-
-
-
-
-

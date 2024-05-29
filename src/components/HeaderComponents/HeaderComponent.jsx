@@ -1,6 +1,5 @@
 
-import { InputComponent } from '../InputComponents/InputComponent'
-import { InputSearchComponent } from '../InputComponents/InputComponent'
+import { InputSearchComponent } from '../InputComponents/InputSearchComponent/InputSearchComponent'
 import { NavbarComponent } from '../NavbarComponents/NavbarComponent'
 import './HeaderComponent.css'
 
@@ -15,7 +14,7 @@ export const HeaderComponent = (props) => {
             <header className='HeaderComponent'>
                 <NavbarComponent/>
                 {props.isSearchPage ?  <p className='HeaderComponent__text'>{searchContent}</p> : <p className='HeaderComponent__text'>{FavoriteContent}</p> }
-                {props.isSearchPage ?  <InputComponent/> : <p></p>}
+                {props.isSearchPage ?  <InputSearchComponent/> : <p></p>}
             </header>
         </>
     )

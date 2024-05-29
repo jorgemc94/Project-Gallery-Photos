@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client'
 import './styles.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { SearchPage } from './pages/SearchPages/SearchPage'
-import { FavoritePage } from './pages/FavoritePage'
+import { FavoritePage } from './pages/FavoritePages/FavoritePage'
 import { Provider } from 'react-redux'
 import { Store } from './app/store'
 

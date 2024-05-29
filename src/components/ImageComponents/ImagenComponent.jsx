@@ -1,5 +1,6 @@
 
-import { IconsFavoriteComponent, IconsSearchComponent } from '../IconsComponents/IconsComponent'
+import { IconsFavoriteComponent } from '../IconsComponents/IconsFavoriteComponent/IconsFavoriteCompoent';
+import { IconsSearchComponent } from '../IconsComponents/IconsFavoriteComponent/IconsComponent';
 import './ImageComponent.css'
 
 export const ImageComponent = (props) => {

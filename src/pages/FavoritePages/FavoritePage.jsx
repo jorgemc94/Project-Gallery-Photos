@@ -1,10 +1,10 @@
 
-import { HeaderComponent } from "../components/HeaderComponents/HeaderComponent";
-import { FooterComponent } from '../components/FooterComponents/FooterComponent';
-import { ImageComponent } from '../components/ImageComponents/ImagenComponent';
+import { HeaderComponent } from "../../components/HeaderComponents/HeaderComponent";
+import { FooterComponent } from '../../components/FooterComponents/FooterComponent';
+import { ImageComponent } from '../../components/ImageComponents/ImagenComponent';
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { InputSearchComponent } from "../components/InputComponents/InputComponent";
+import { InputFavoriteComponent } from "../../components/InputComponents/InputFavoriteComponent/InputFavoriteComponent";
 import './FavoritePage.css'
 
 export const FavoritePage = () => {
@@ -24,7 +24,7 @@ export const FavoritePage = () => {
     return (
         <>
             <HeaderComponent />
-            <InputSearchComponent updateFilteredPhotos={setFilteredPhotos} />
+            <InputFavoriteComponent updateFilteredPhotos={setFilteredPhotos} />
             <select onChange={FilteredOnchange} className="OrderByComponent__select">
                 <option value={'width'} >Width</option>
                 <option value={'height'} >Height</option>
