@@ -6,6 +6,7 @@ import { removeFavorite } from "../../../features/Favorite/FavoriteSlice"
 import { editDescription } from "../../../features/Favorite/FavoriteSlice"
 import { ModalComponent } from "../../ModalComponents/ModalComponent"
 import '../IconsComponent.css'
+import { toast } from "sonner"
 
 export const IconsFavoriteComponent = (props) => {
 

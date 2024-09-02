@@ -3,7 +3,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const GetSearchRandomThunk = createAsyncThunk('search/getSearchRandom', async () => {
     try {
-        const response = await fetch('https://api.unsplash.com/photos/?per_page=30', {
+        const response = await fetch('https://api.unsplash.com/photos/?per_page=300', {
             headers: {
                 'Authorization': 'Client-ID GDB-GYncQ00EpHB_wLtZqdnyIVfoQi2Ym3FarJ9_JaQ'
             }

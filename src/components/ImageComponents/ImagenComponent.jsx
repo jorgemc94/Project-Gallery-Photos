@@ -1,6 +1,6 @@
 
 import { IconsFavoriteComponent } from '../IconsComponents/IconsFavoriteComponent/IconsFavoriteCompoent';
-import { IconsSearchComponent } from '../IconsComponents/IconsFavoriteComponent/IconsComponent';
+import { IconsSearchComponent } from '../IconsComponents/IconsSearchComponent/IconsComponent';
 import './ImageComponent.css'
 
 export const ImageComponent = (props) => {
@@ -8,7 +8,8 @@ export const ImageComponent = (props) => {
         <div className='ImageComponent'>
             <img className="ImageComponent__img" src={props.image} alt={props.description}/>
             {props.isSearchPage ? 
-                <IconsSearchComponent 
+                <IconsSearchComponent
+                    toast= {props.toast} 
                     id={props.id} 
                     image={props.image} 
                     description={props.description} 
