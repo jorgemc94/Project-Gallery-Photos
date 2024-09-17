@@ -1,17 +1,15 @@
-
 import { saveAs } from 'file-saver'
 import '../IconsComponent.css'
-import { useDispatch, } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addFavorite } from '../../../features/Favorite/FavoriteSlice'
+import { toast } from 'sonner'
 
 export const IconsSearchComponent = (props) => {
-
     const dispatch = useDispatch()
-    
 
     const AddFavoriteHandler = (event) => {
         event.preventDefault()
-       console.log( dispatch(addFavorite({
+        dispatch(addFavorite({
             id: props.id,
             image: props.image,
             description: props.description,
@@ -19,28 +17,19 @@ export const IconsSearchComponent = (props) => {
             width: props.width,
             likes: props.likes,
             date: props.date,
-            
-            
-        })));    
-        props.toast(true)
+        }))
+        toast.success("Added to favorites!") 
     }
 
-    
+    const downloadHandler = () => {
+        saveAs(props.image)
+        toast.success("Downloaded!")
+    }
 
     return (
-        <>
-            <div className="IconsComponent">
-                <span className="material-symbols-outlined IconsComponent__Icon" onClick={AddFavoriteHandler}> heart_plus </span>
-                <span className="material-symbols-outlined IconsComponent__Icon" onClick={()=>saveAs(props.image, props.toast(true)) }> download </span>
-            </div>
-        </>
+        <div className="IconsComponent">
+            <span className="material-symbols-outlined IconsComponent__Icon" onClick={AddFavoriteHandler}> heart_plus </span>
+            <span className="material-symbols-outlined IconsComponent__Icon" onClick={downloadHandler}> download </span>
+        </div>
     )
 }
-
-
-
-
-
-
-
-
