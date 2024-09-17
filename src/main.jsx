@@ -17,7 +17,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             style: {
               backgroundColor: 'green',
               color: '#fff',
-            }
+            },
+            duration: 2000,
           }}/>
         <Routes>
           <Route path='' element={<SearchPage/>} />
